@@ -29,7 +29,8 @@ void printList();
 void deleteNode();
 int length();
 void print_node(Node *);
-
+int find(int code);
+int findName(char name[]);
 void main(){
 
 }
@@ -126,4 +127,45 @@ void deleteNode(){
     else pre->next = current->next;
 
     free(current);
+}
+int find(int code) {
+
+
+   if(head == NULL) {
+      printf("\nthe library is empty\n\n");
+      return 1;
+   }
+
+   Node *current = head;
+
+   while(current->code != code) {
+      if(current->next == NULL){
+         printf("\nthis code doesn't exist");
+         return 1;
+      }
+       else
+         current = current->next;
+   }
+   printf("\nfound book\n");
+
+    curr=current;
+   return 0;
+}
+
+int findName(char name[30]){
+Node *bk = head;
+while( bk != NULL){
+    if(strcmp(name,bk->name)==0)
+        break;
+    bk=bk->next;
+}
+if(bk == NULL)
+    return 0;
+
+else
+{
+    curr=bk;
+    return 1;
+}
+
 }
