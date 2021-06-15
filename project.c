@@ -31,6 +31,8 @@ int length();
 void print_node(Node *);
 int find(int code);
 int findName(char name[]);
+void update();
+void updateName(char name[]);
 void main(){
 
 }
@@ -166,6 +168,67 @@ else
 {
     curr=bk;
     return 1;
+}
+
+}
+void update()
+{
+int code;
+printf("enter the code");
+scanf("%d", &code);
+if(find(code)==0){
+print_node(curr);
+printf("change book's category: ");
+ scanf("\n%[^\n]",curr->category);
+
+ printf("change book's name: ");
+ scanf("\n%[^\n]",curr->name);
+
+ printf("change book's code: ");
+ scanf("%d", &curr->code);
+
+ printf("change book's copies: ");
+ scanf("%d", &curr->copies);
+
+ printf("change book's price: ");
+ scanf("%f", &curr->price);
+
+ printf("Updation Successful!!!\nnew data\n");
+ print_node(curr);
+            return;
+}
+else{
+    return;
+}
+
+}
+
+
+void updateName(char name[])
+{
+if(findName(name)==1){
+print_node(curr);
+printf("change book's category: ");
+ scanf("\n%[^\n]",curr->category);
+
+ printf("change book's name: ");
+ scanf("\n%[^\n]",curr->name);
+
+ printf("change book's code: ");
+ scanf("%d", &curr->code);
+
+ printf("change book's copies: ");
+ scanf("%d", &curr->copies);
+
+ printf("change book's price: ");
+ scanf("%f", &curr->price);
+
+ printf("Updation Successful!!!\nnew data\n");
+ print_node(curr);
+            return;
+}
+else{
+    return;
 }
 
 }
