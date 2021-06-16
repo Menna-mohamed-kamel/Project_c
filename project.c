@@ -307,23 +307,8 @@ else{
  void insert(){
 
 Node *newbook=malloc(sizeof(Node));
-int num;
  printf("Please, enter book's name: ");
  scanf("\n%[^\n]",newbook->name);
- while(findName(newbook->name)==1){
-    printf("book is already in the library\n");
-    printf("choose \n1- update book\n2- change name\n");
-    scanf("%d", &num);
-    switch(num){
-case 1:
-    updateName(newbook->name);
-    break;
-case 2:
- printf("Please, enter book's name: ");
- scanf("\n%[^\n]",newbook->name);
- break;
-    }
- }
  printf("Please, enter book's code: ");
  scanf("%d", &newbook->code);
  while(!find(newbook->code)){
