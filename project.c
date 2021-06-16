@@ -29,6 +29,7 @@ void updateName(char name[]);
 void insert();
 
 void main(){
+Node *up=malloc(sizeof(Node));
 Append();
 printf("welcome to the library\nwhat do you want to day\n1- add new book\n2- show books\n3- number of books\n4- search\n5- update data of a book\n6- delete book****if you want to end this programm please click zero\n");
     unsigned int choice;
@@ -68,8 +69,8 @@ printf("welcome to the library\nwhat do you want to day\n1- add new book\n2- sho
         case 2:
             printf("Please, enter book's name: ");
           char name[30];
-          scanf("\n%[^\n]",rr->name);
-        updateName(rr->name);
+          scanf("\n%[^\n]",up->name);
+        updateName(up->name);
         break;
          default:
         printf("invalid input\n");
