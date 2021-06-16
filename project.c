@@ -12,14 +12,7 @@ typedef struct node_book {
 }Node;
 
 
-typedef struct Book
-{
-	char name[30];
-	char category[30];
-	int code;
-	int copies;
-	float price;
-}book;
+
 Node *head = NULL, *end = NULL;
 Node *curr = NULL;
 
@@ -126,7 +119,7 @@ void Append()
 
     while( 1 ){
 Node *bk = malloc(sizeof(Node));
-    if( fread(&bk->category,sizeof(bk->category),1,file)==0 )return;
+    if( fread(&bk->category,sizeof(bk->category),1,file)==0 )break;
     fread(&bk->code,sizeof(bk->code),1,file);
     fread(&bk->copies,sizeof(bk->copies),1,file);
     fread(&bk->name,sizeof(bk->name),1,file);
@@ -136,12 +129,12 @@ bk->next=NULL;
 
         end->next=bk;
         end=end->next;
-printf("done\n\n");
+
         }
    end->next = NULL ;
 
 
-        printf("end\n\n");
+        
     fclose(file);
  }
 
