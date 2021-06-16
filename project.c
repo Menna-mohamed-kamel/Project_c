@@ -56,7 +56,27 @@ printf("welcome to the library\nwhat do you want to day\n1- add new book\n2- sho
         print_node(curr);
         break;
      case 5:
-        update();
+
+         printf("choose\n1- update with code\n2-update with name\n");
+          int num;
+         scanf("%d",&num);
+
+         switch (num){
+        case 1:
+            update();
+            break;
+        case 2:
+            printf("Please, enter book's name: ");
+          char name[30];
+          scanf("\n%[^\n]",rr->name);
+        updateName(rr->name);
+        break;
+         default:
+        printf("invalid input\n");
+        break;
+     }
+
+
         break;
      case 6:
         deleteNode();
@@ -254,9 +274,6 @@ printf("change book's category: ");
  printf("change book's name: ");
  scanf("\n%[^\n]",curr->name);
 
- printf("change book's code: ");
- scanf("%d", &curr->code);
-
  printf("change book's copies: ");
  scanf("%d", &curr->copies);
 
@@ -283,9 +300,6 @@ printf("change book's category: ");
 
  printf("change book's name: ");
  scanf("\n%[^\n]",curr->name);
-
- printf("change book's code: ");
- scanf("%d", &curr->code);
 
  printf("change book's copies: ");
  scanf("%d", &curr->copies);
